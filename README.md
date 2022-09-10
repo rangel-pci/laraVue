@@ -1,3 +1,5 @@
+<img src="https://github.com/rangel-pci/files/blob/master/laraVue-shot.png" />
+
 # Rodando a aplicação
 
 ```bash
