@@ -7,6 +7,7 @@ export default function useCustomers(){
     const customer = ref();
     const errors = reactive({ property: {} });
     const router = useRouter();
+    const loading = ref(false);
 
     const getCustomers = async () => {
         let res = await axios.get('/api/customers');
@@ -23,6 +24,8 @@ export default function useCustomers(){
     }
 
     const createCustomer = async (data) => {
+        loading.value = true;
+
         try {
             await axios.post('/api/customers', data);
             await router.push({ name: 'customers.index' });
@@ -31,10 +34,14 @@ export default function useCustomers(){
                 console.log(e.response.data.errors);
                 errors.property = e.response.data.errors;
             }
+
+            loading.value = false;
         }
     }
 
     const updateCustomer = async (id, data) => {
+        loading.value = true;
+
         try {
             await axios.put(`/api/customers/${id}`, data);
             await router.push({ name: 'customers.index' });
@@ -43,6 +50,8 @@ export default function useCustomers(){
                 console.log(e.response.data.errors);
                 errors.property = e.response.data.errors;
             }
+
+            loading.value = false;
         }
     }
 
@@ -58,6 +67,7 @@ export default function useCustomers(){
         getCustomer,
         createCustomer,
         updateCustomer,
-        destroyCustomer
+        destroyCustomer,
+        loading
     }
 }

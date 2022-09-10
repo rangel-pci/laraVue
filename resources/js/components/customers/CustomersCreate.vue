@@ -74,7 +74,10 @@
             </div>
         </div>
 
-        <button type="submit" class="btn btn-primary mt-3 rounded-0">Salvar</button>
+        <div v-if="loading" class="spinner-grow text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        <button v-if="!loading" type="submit" class="btn btn-primary mt-3 rounded-0">Salvar</button>
     </form>
 
 </template>
@@ -85,7 +88,7 @@ import useCustomers from '../../composables/customers';
 
 export default {
     setup() {
-        const { createCustomer, errors, getCustomers } = useCustomers();
+        const { loading, createCustomer, errors, getCustomers } = useCustomers();
 
         const form = reactive({
             name: '',
@@ -126,6 +129,7 @@ export default {
         return {
             form,
             errors,
+            loading,
             saveCustomer,
             photoPreviewUrl,
             handleImageChange,

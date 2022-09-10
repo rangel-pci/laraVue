@@ -74,7 +74,10 @@
             </div>
         </div>
 
-        <button type="submit" class="btn btn-primary mt-3 rounded-0">Salvar</button>
+        <div v-if="loading" class="spinner-grow text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        <button v-if="!loading" type="submit" class="btn btn-primary mt-3 rounded-0">Salvar</button>
     </form>
 
 </template>
@@ -93,7 +96,7 @@ export default {
     },
 
     setup(props) {
-        const { customer, errors, getCustomer, updateCustomer } = useCustomers();
+        const { loading, customer, errors, getCustomer, updateCustomer } = useCustomers();
 
         onMounted(getCustomer(props.id));
 
@@ -135,6 +138,7 @@ export default {
             customer,
             saveCustomer,
             handleImageChange,
+            loading
         }
     },
 }
