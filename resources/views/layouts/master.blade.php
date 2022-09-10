@@ -21,7 +21,7 @@
             btn-dark
             rounded-0
             @if (request()->route()->getName() == 'welcome') active @endif"
-            href="/inicio"
+            href="/"
         >
             Início
         </a>
