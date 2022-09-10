@@ -1,16 +1,16 @@
 # Rodando a aplicação
 
 ```bash
-    $ git clone https://github.com/rangel-pci/laraVue
-    $ cd laraVue
-    $ composer install
+$ git clone https://github.com/rangel-pci/laraVue
+$ cd laraVue
+$ composer install
 ```
 2. Renomeie o arquivo .env.example e informe a configuração do banco de dados e cliente de email
 ```bash
-    $ php artisan key:generate
-    $ php artisan storage:link
-    $ php artisan migrate
-    $ php artisan serve
+$ php artisan key:generate
+$ php artisan storage:link
+$ php artisan migrate
+$ php artisan serve
 ```
 
 # Utilizado
