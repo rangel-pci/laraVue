@@ -17,8 +17,8 @@ class CreateAddressesTable extends Migration
             $table->id();
             $table->foreignId('customer_id');
             $table->char('uf', 2);
-            $table->string('city')->default('');
-            $table->string('place')->default('');
+            $table->string('city')->nullable()->default('');
+            $table->string('place')->nullable()->default('');
         });
     }
 
