@@ -1,13 +1,18 @@
+Studying Vue.js 3 and Laravel integration.<br>
+Something i thought was really cool was make Laravel taking full care of API routes and partially of WEB routes, making vue-router take preference over WEB routes.
+<br>
+
 <img src="https://github.com/rangel-pci/files/blob/master/laraVue-shot.png" />
 
-# Rodando a aplicação
+## Running the application
 
 ```bash
 $ git clone https://github.com/rangel-pci/laraVue
 $ cd laraVue
 $ composer install
 ```
-2. Renomeie o arquivo .env.example e informe a configuração do banco de dados e cliente de email
+
+## Rename the .env.example file and enter the database and email client configuration
 ```bash
 $ php artisan key:generate
 $ php artisan storage:link
@@ -15,18 +20,24 @@ $ php artisan migrate
 $ php artisan serve
 ```
 
-# Utilizado
-Laravel v8.83.23 (PHP v7.4.29)<br>
-Vue.js v3.2.36<br>
-MySQL v15.1
+## Technologies
+Laravel 8<br>
+VueJS 3<br>
+MySQL
 
-Laravel:<br>
-Validação dos dados de entrada -> FormRequest<br>
-Formatação dos dados de retorno -> JsonResource/ResourceCollection<br>
-Envio de email -> Mailable com markdown<br>
-Pacote de tradução para as validações -> lucascudo/laravel-pt-BR-localization<br>
-<br>
-Utilizei https://mailtrap.io para o envio de email
+Laravel:
+<ul>
+<li>Input data validation -> FormRequest</li>
+<li>Response data formatting -> JsonResource/ResourceCollection</li>
+<li>Mail -> Mailable & markdown</li>
+<li>Mailtrap.io to send emails</li>
+<li>Translation package for validations -> lucascudo/laravel-pt-BR-localization</li>
+</ul>
 
-Vue.Js:<br>
-Vue 3, composition API, vue-router e axios
+VueJS:
+<ul>
+<li>Vue 3</li>
+<li>composition API</li>
+<li>vue-router</li>
+<li>axios</li>
+</ul>
